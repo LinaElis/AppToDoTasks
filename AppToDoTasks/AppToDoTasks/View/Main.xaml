@@ -19,7 +19,7 @@
         <StackLayout>
           <StackLayout Orientation="Horizontal">
             <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="SAVE" Clicked="OnSave" />
-            <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="CANCEL" Clicked="OnCancel" />
+            <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="CLEAR" Clicked="OnCancel" />
             <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="SAVED TASKS" Clicked="OnSeeMyTasks" />
           </StackLayout>
           <StackLayout>

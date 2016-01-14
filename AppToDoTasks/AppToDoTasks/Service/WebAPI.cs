@@ -20,18 +20,25 @@ namespace AppToDoTasks.Service
         }
         public string ReadOutLoudYoda(string yoda)
         {
-            var response = Unirest.get("https://yoda.p.mashape.com/yoda?sentence=" + yoda)
-            .header("X-Mashape-Key", "jNdTUH1UxUmshWJ0duG9JGydgLqGp13bv6IjsnmZCuwlTEAK62")
-            .header("Accept", "text/plain")
-            .asString();
+          
+                var handle = Insights.TrackTime("Time for API to connect");
 
-            if (response.Code == 200 )
-            {
-                return response.Body;
-            }
+                handle.Start();
 
-            string errorMessages = "Could not connect to API";
-            return errorMessages;
+                var response = Unirest.get("https://yoda.p.mashape.com/yoda?sentence=" + yoda)
+                 .header("X-Mashape-Key", "jNdTUH1UxUmshWJ0duG9JGydgLqGp13bv6IjsnmZCuwlTEAK62")
+                 .header("Accept", "text/plain")
+                 .asString();
+
+                if (response.Code == 200)
+                {
+                    return response.Body;
+                }
+
+                handle.Stop();
+
+                string errorMessages = "Could not connect to API";
+                return errorMessages;                 
 
         }
     }

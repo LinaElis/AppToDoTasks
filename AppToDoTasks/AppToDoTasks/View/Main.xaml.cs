@@ -69,7 +69,6 @@ namespace AppToDoTasks.View
                     { "The saved string", savedString }
                 });
 
-                //Clear();
             }
 
             catch (Exception ex)
@@ -85,16 +84,13 @@ namespace AppToDoTasks.View
 
         private void Clear()
         {
-            ToDoEntry.Text = Priority.Text = String.Empty;
+            ToDoEntry.Text = Priority.Text = string.Empty;
             Date.Date = DateTime.Now;
             Time.Time = new TimeSpan(
                 DateTime.Now.Hour,
                 DateTime.Now.Minute,
                 DateTime.Now.Second);
         }
-
-        //API-anropet, YODA-knappen + label
-
 
         public void OnCancel(object o, EventArgs e)
         {   
@@ -103,7 +99,7 @@ namespace AppToDoTasks.View
 
         public void OnSeeMyTasks(object o, EventArgs e)
         {
-            //Clear();
+            Clear();
             Navigation.PushAsync(new ListTasksPage());
         }
 
@@ -114,7 +110,5 @@ namespace AppToDoTasks.View
 
             lblYoda.Text = translation;
         }
-
-      
     }
 }
