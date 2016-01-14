@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppToDoTasks.View.Main">
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout Padding="20">
+        <Label XAlign="Center" Text="Create new task" TextColor="Silver" FontSize="20" />
+        <Entry x:Name="ToDoEntry" Placeholder="New task" WidthRequest="150" />
+        <Entry x:Name="Priority" Placeholder="Priority" WidthRequest="150" />
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Date" VerticalOptions="End" TextColor="Teal" />
+          <DatePicker x:Name="Date" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal">
+          <Label Text="Time" VerticalOptions="End" TextColor="Teal" />
+          <TimePicker x:Name="Time" />
+        </StackLayout>
+        <StackLayout>
+          <StackLayout Orientation="Horizontal">
+            <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="SAVE" Clicked="OnSave" />
+            <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="CANCEL" Clicked="OnCancel" />
+            <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="100" Text="SAVED TASKS" Clicked="OnSeeMyTasks" />
+          </StackLayout>
+          <StackLayout>
+            <Button BackgroundColor="Pink" TextColor="Black" WidthRequest="250" Text="CLICK HERE TO HERE YODA TRANSLATE YOUR TASK" Clicked="OnYodaSpeak" />
+            <Label x:Name="lblYoda" />
+          </StackLayout>
+        </StackLayout>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+</ContentPage>
